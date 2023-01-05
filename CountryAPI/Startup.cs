@@ -28,7 +28,7 @@ namespace CountryAPI
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<Models.PostgresContext>(options =>
-            options.UseNpgsql("Host=localhost;Database=postgres;Username=postgres;Password=15Nov1998")
+            options.UseNpgsql("Host=localhost;Database=Country;Username=postgres;Password=15Nov1998")
             );
 
             services.AddControllers();

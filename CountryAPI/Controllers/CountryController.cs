@@ -27,7 +27,7 @@ namespace CountryAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Country>> GetCountryItem(long id)
+        public async Task<ActionResult<Country>> GetCountryItem(int id)
         {
             var countryItem = await _context.Countries.FindAsync(id);
 
@@ -40,7 +40,7 @@ namespace CountryAPI.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCountryItem(long id, Country country)
+        public async Task<IActionResult> PutCountryItem(int id, Country country)
         {
             if (id != country.Id)
             {
@@ -78,7 +78,7 @@ namespace CountryAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCountry(long id)
+        public async Task<IActionResult> DeleteCountry(int id)
         {
             var country = await _context.Countries.FindAsync(id);
             if (country == null)
